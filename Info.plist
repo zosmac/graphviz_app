@@ -4,39 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>CFBundleDocumentTypes</key>
-	<array>
-		<!-- support older .dot extension -->
-		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
-				<string>dot</string>
-			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>GraphDot.icns</string>
-			<key>CFBundleTypeName</key>
-			<string>GVDocumentTypeGraph</string>
-			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
-			<key>NSDocumentClass</key>
-			<string>GVDocument</string>
-		</dict>
-		<!-- support newer .gv extension -->
-		<dict>
-			<key>CFBundleTypeIconFile</key>
-			<string>GraphGv.icns</string>
-			<key>CFBundleTypeName</key>
-			<string>GVDocumentTypeGraph</string>
-			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
-			<key>LSItemContentTypes</key>
-			<array>
-				<string>com.att.graphviz.graph</string>
-			</array>
-			<key>NSDocumentClass</key>
-			<string>GVDocument</string>
-		</dict>
-	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIconFile</key>
@@ -59,7 +26,39 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.graphics-design</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>dot</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>GraphDot.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>GVDocumentTypeGraph</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>NSDocumentClass</key>
+			<string>GVDocument</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeIconFile</key>
+			<string>GraphGv.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>GVDocumentTypeGraph</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.att.graphviz.graph</string>
+			</array>
+			<key>NSDocumentClass</key>
+			<string>GVDocument</string>
+		</dict>
+	</array>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
