@@ -1,15 +1,15 @@
 # https://github.com/zosmac/graphviz
 #
 # Build the macOS Graphviz.app and copy to the /Applications folder.
-# Requires that Graphviz be installed in /usr/local.
+# Assumes that Graphviz is installed in /usr/local/graphviz.
 # See https://graphviz.org
 # Source available at https://gitlab.com/graphviz/graphviz
 
-ARCH=$(shell uname -m)
-PREFIX=/usr/local
+ARCH:=$(shell uname -m)
+PREFIX=/usr/local/graphviz
 PROJECT=graphviz
 PRODUCT=Graphviz
-APP=$(PRODUCT).app
+APP:=$(PRODUCT).app
 XCODEBUILD=xcodebuild
 
 /Applications/$(APP): /tmp/$(PROJECT).dst/Applications/$(APP)
