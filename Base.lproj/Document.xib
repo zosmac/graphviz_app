@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23727" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22505"/>
-        <plugIn identifier="com.apple.pdfkit.ibplugin" version="22505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23727"/>
+        <plugIn identifier="com.apple.pdfkit.ibplugin" version="23727"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,7 +17,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="201" y="387" width="507" height="413"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1710" height="1068"/>
             <value key="minSize" type="size" width="94" height="86"/>
             <view key="contentView" id="6">
                 <rect key="frame" x="0.0" y="0.0" width="507" height="413"/>
@@ -29,7 +29,7 @@
                     </pdfView>
                 </subviews>
             </view>
-            <toolbar key="toolbar" implicitIdentifier="E9A9ADB5-713A-4433-AAA3-B6D7623B1EF1" displayMode="iconAndLabel" sizeMode="regular" id="100024">
+            <toolbar key="toolbar" implicitIdentifier="E9A9ADB5-713A-4433-AAA3-B6D7623B1EF1" showsBaselineSeparator="NO" displayMode="iconAndLabel" sizeMode="regular" id="100024">
                 <allowedToolbarItems>
                     <toolbarItem implicitItemIdentifier="17DE7292-3A49-457D-8C8D-856E5DCBDED2" label="Attributes" paletteLabel="Attributes" tag="-1" image="info.circle" catalog="system" sizingBehavior="auto" id="100032">
                         <connections>
@@ -69,7 +69,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="17"/>
             </connections>
-            <point key="canvasLocation" x="48" y="133"/>
+            <point key="canvasLocation" x="-78" y="234"/>
         </window>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
     </objects>

@@ -12,7 +12,7 @@
 
 @class GVAttributeInspectorController;
 
-@interface GVApplicationDelegate : NSObject
+@interface GVApplicationDelegate : NSObject<NSApplicationDelegate>
 {
 	GVAttributeInspectorController *_attributeInspectorController;
 	BOOL _applicationStarted;
