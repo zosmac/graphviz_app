@@ -16,7 +16,7 @@ XCODEBUILD=xcodebuild
 	cp -R $< $@
 
 /tmp/$(PROJECT).dst/Applications/$(APP): *.m *.h Base.lproj/*.xib $(PREFIX)/bin/dot
-	$(XCODEBUILD) -project $(PROJECT).xcodeproj -target $(PRODUCT) -configuration Release install USER_HEADER_SEARCH_PATHS=$(PREFIX)/include/graphviz LIBRARY_SEARCH_PATHS=$(PREFIX)/lib ARCHS=$(ARCH)
+	$(XCODEBUILD) -project $(PROJECT).xcodeproj -target $(PRODUCT) -configuration Release install USER_HEADER_SEARCH_PATHS=$(PREFIX)/include/graphviz LIBRARY_SEARCH_PATHS=$(PREFIX)/lib LD_RUNPATH_SEARCH_PATHS=$(PREFIX)/lib ARCHS=$(ARCH)
 
 .PHONY: clean
 clean:

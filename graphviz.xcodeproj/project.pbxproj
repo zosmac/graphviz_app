@@ -358,6 +358,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = /usr/local/graphviz/include/graphviz;
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/graphviz/lib;
 				LIBRARY_SEARCH_PATHS = /usr/local/graphviz/lib;
 				SWIFT_OBJC_BRIDGING_HEADER = "Graphviz-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -370,6 +371,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = /usr/local/graphviz/include/graphviz;
+				LD_RUNPATH_SEARCH_PATHS = /usr/local/graphviz/lib;
 				LIBRARY_SEARCH_PATHS = /usr/local/graphviz/lib;
 				SWIFT_OBJC_BRIDGING_HEADER = "Graphviz-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
