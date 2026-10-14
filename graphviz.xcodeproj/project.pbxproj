@@ -87,8 +87,8 @@
 		D87989EE0D5D273000CCC6E3 /* GVApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVApplicationDelegate.m; sourceTree = "<group>"; };
 		D87989F00D5D283300CCC6E3 /* GVAttributeInspectorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVAttributeInspectorController.h; sourceTree = "<group>"; };
 		D87989F10D5D283300CCC6E3 /* GVAttributeInspectorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVAttributeInspectorController.m; sourceTree = "<group>"; };
-		D8798B080D5D2ECD00CCC6E3 /* arguments.xml */ = {isa = PBXFileReference; explicitFileType = text.xml; fileEncoding = 4; name = arguments.xml; path = /usr/local/graphviz/share/doc/graphviz/schema/arguments.xml; sourceTree = "<absolute>"; };
-		D8798B090D5D2ECD00CCC6E3 /* attributes.xml */ = {isa = PBXFileReference; explicitFileType = text.xml; fileEncoding = 4; name = attributes.xml; path = /usr/local/graphviz/share/doc/graphviz/schema/attributes.xml; sourceTree = "<absolute>"; };
+		D8798B080D5D2ECD00CCC6E3 /* arguments.xml */ = {isa = PBXFileReference; explicitFileType = text.xml; fileEncoding = 4; name = arguments.xml; path = schema/arguments.xml; sourceTree = "<group>"; };
+		D8798B090D5D2ECD00CCC6E3 /* attributes.xml */ = {isa = PBXFileReference; explicitFileType = text.xml; fileEncoding = 4; name = attributes.xml; path = schema/attributes.xml; sourceTree = "<group>"; };
 		D8798BDD0D5D5BD700CCC6E3 /* GVAttributeSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVAttributeSchema.h; sourceTree = "<group>"; };
 		D8798BDE0D5D5BD700CCC6E3 /* GVAttributeSchema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVAttributeSchema.m; sourceTree = "<group>"; };
 		D88584190D54866C00D35701 /* Graphviz.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Graphviz.icns; sourceTree = "<group>"; };
@@ -106,12 +106,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				58A271102B5DED6F005BDC11 /* AppKit.framework in Frameworks */,
-				58C3945B2BA735E0009C1B06 /* libgvc.7.dylib in Frameworks */,
 				58A271122B5DED94005BDC11 /* Foundation.framework in Frameworks */,
 				58922E972B5DE2AC00332F9C /* PDFKit.framework in Frameworks */,
 				58922E952B5DE29200332F9C /* UniformTypeIdentifiers.framework in Frameworks */,
-				58C3945D2BA735E9009C1B06 /* libcdt.6.dylib in Frameworks */,
-				58C3945C2BA735E4009C1B06 /* libcgraph.7.dylib in Frameworks */,
 				58A271142B5DEDB4005BDC11 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,10 +353,34 @@
 		C05733C808A9546B00998B17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_MODULES = YES;
-				HEADER_SEARCH_PATHS = /usr/local/graphviz/include/graphviz;
-				LD_RUNPATH_SEARCH_PATHS = /usr/local/graphviz/lib;
-				LIBRARY_SEARCH_PATHS = /usr/local/graphviz/lib;
+				CODE_SIGN_IDENTITY = "-";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/include/graphviz,
+					/usr/local/include/graphviz,
+					/usr/local/graphviz/include/graphviz,
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					/opt/homebrew/lib,
+					/usr/local/lib,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/lib,
+					/usr/local/lib,
+					/usr/local/graphviz/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lgvc",
+					"-lcgraph",
+					"-lcdt",
+				);
 				SWIFT_OBJC_BRIDGING_HEADER = "Graphviz-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -369,10 +390,34 @@
 		C05733C908A9546B00998B17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_MODULES = YES;
-				HEADER_SEARCH_PATHS = /usr/local/graphviz/include/graphviz;
-				LD_RUNPATH_SEARCH_PATHS = /usr/local/graphviz/lib;
-				LIBRARY_SEARCH_PATHS = /usr/local/graphviz/lib;
+				CODE_SIGN_IDENTITY = "-";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/include/graphviz,
+					/usr/local/include/graphviz,
+					/usr/local/graphviz/include/graphviz,
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					/opt/homebrew/lib,
+					/usr/local/lib,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/lib,
+					/usr/local/lib,
+					/usr/local/graphviz/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lgvc",
+					"-lcgraph",
+					"-lcdt",
+				);
 				SWIFT_OBJC_BRIDGING_HEADER = "Graphviz-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -383,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -407,6 +453,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -418,10 +465,34 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = /usr/local/include/graphviz;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/include/graphviz,
+					/usr/local/include/graphviz,
+					/usr/local/graphviz/include/graphviz,
+				);
 				INFOPLIST_FILE = Info.plist;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					/opt/homebrew/lib,
+					/usr/local/lib,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/lib,
+					/usr/local/lib,
+					/usr/local/graphviz/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lgvc",
+					"-lcgraph",
+					"-lcdt",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.att.graphviz;
 				PRODUCT_NAME = Graphviz;
 			};
@@ -431,6 +502,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -455,6 +527,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -465,9 +538,33 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = /usr/local/include/graphviz;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/include/graphviz,
+					/usr/local/include/graphviz,
+					/usr/local/graphviz/include/graphviz,
+				);
 				INFOPLIST_FILE = Info.plist;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					/opt/homebrew/lib,
+					/usr/local/lib,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/lib,
+					/usr/local/lib,
+					/usr/local/graphviz/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lgvc",
+					"-lcgraph",
+					"-lcdt",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.att.graphviz;
 				PRODUCT_NAME = Graphviz;
 			};

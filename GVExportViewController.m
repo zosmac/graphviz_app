@@ -80,7 +80,7 @@ static NSMutableArray *_formatRenders;
 		
 		/* force save panel to use this file type */
 		UTType *type = [UTType typeWithFilenameExtension:_formatRender[@"format"]];
-		_panel.allowedContentTypes = @[type];
+		_panel.allowedContentTypes = type ? @[type] : @[];
 
 		/* remove existing render if it's not compatible with format */
 		if (![_formatRender[@"renders"] containsObject:_render])
@@ -98,7 +98,7 @@ static NSMutableArray *_formatRenders;
 	_panel = [NSSavePanel savePanel];
 	_panel.accessoryView = self.view;
 	UTType *type = [UTType typeWithFilenameExtension:_formatRender[@"format"]];
-	_panel.allowedContentTypes = @[type];
+	_panel.allowedContentTypes = type ? @[type] : @[];
 	_panel.directoryURL = _url.URLByDeletingLastPathComponent;
 	_panel.nameFieldStringValue = _url.lastPathComponent;
 	__weak typeof(self) weakSelf = self;
