@@ -51,7 +51,7 @@
                             <action selector="zoomInView:" target="-2" id="100041"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="11EC59ED-53EE-4F57-A97C-1C81DFF1B2FA" label="Zoom To Fit" paletteLabel="Zoom To Fit" tag="-1" image="square.arrowtriangle.4.outward" catalog="system" sizingBehavior="auto" id="100043">
+                    <toolbarItem implicitItemIdentifier="11EC59ED-53EE-4F57-A97C-1C81DFF1B2FA" label="Zoom To Fit" paletteLabel="Zoom To Fit" tag="-1" image="arrow.up.left.and.arrow.down.right" catalog="system" sizingBehavior="auto" id="100043">
                         <connections>
                             <action selector="zoomToFitView:" target="-2" id="100044"/>
                         </connections>
@@ -78,6 +78,6 @@
         <image name="info.circle" catalog="system" width="15" height="15"/>
         <image name="minus.magnifyingglass" catalog="system" width="16" height="15"/>
         <image name="plus.magnifyingglass" catalog="system" width="16" height="15"/>
-        <image name="square.arrowtriangle.4.outward" catalog="system" width="17" height="16"/>
+        <image name="arrow.up.left.and.arrow.down.right" catalog="system" width="16" height="15"/>
     </resources>
 </document>
